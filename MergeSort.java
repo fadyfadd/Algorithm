@@ -1,9 +1,9 @@
- 
+  
 import java.util.Arrays;
 
 public class MergeSort {
 
-    private String[] merge(String[] arr1, String[] arr2) {
+    private static String[] merge(String[] arr1, String[] arr2) {
         
         int i = 0;
         int j = 0;
@@ -39,7 +39,7 @@ public class MergeSort {
         return result;
     }
 
-    private String[] mergeSort(String[] arr) {
+    private static String[] mergeSort(String[] arr) {
 
         if (arr.length <= 1)
             return arr;
@@ -52,10 +52,14 @@ public class MergeSort {
         return merge(left , right);
         
     }
-    public void main(String... args) {
-        
+    
+    public static void main(String... args) {       
         var sortedArray = mergeSort(new String[] {"11" , "20" , "30" , "100"});
         Utilities.printArray(sortedArray);
         
     }
 }
+
+ 
+
+
