@@ -1,9 +1,10 @@
-
+package algo;
 import java.util.Arrays;
+import algo.trees.*;
 
 public class Utilities {
 
-    static void printInOrder(Node root) {
+    public static void printInOrder(Node root) {
         if (root == null) return;
 
         printInOrder(root.left);
