@@ -1,4 +1,4 @@
-package algo.series;
+package algo;
 public class PrintFibonacciSeries {
 
 

@@ -1,4 +1,4 @@
-package algo.trees;
+package algo;
 public class Node {
     public String data;
     public Node left, right;

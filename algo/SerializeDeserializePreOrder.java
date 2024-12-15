@@ -1,8 +1,6 @@
-package algo.trees;
+package algo;
 import java.util.ArrayList;
 import java.util.List;
-
-import algo.Utilities;
 
 public class SerializeDeserializePreOrder {
 
