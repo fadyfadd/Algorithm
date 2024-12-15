@@ -2,7 +2,7 @@ package algo;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FindAllPaths {
+public class FindAllTreePaths {
 
     private static void _findAllPaths(List<Node> currentPath, List<List<Node>> paths, Node currentNode) {
 
