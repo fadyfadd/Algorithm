@@ -13,12 +13,12 @@ public class Utilities {
         }
     }
 
-    public static void printInOrder(Node root) {
+    public static void printPreOrder(Node root) {
         if (root == null) return;
 
-        printInOrder(root.left);
         System.out.print(root.data + " ");
-        printInOrder(root.right);
+        printPreOrder(root.left);
+        printPreOrder(root.right);
     }
     
     public static  <T> void printArray(T[] arr) {

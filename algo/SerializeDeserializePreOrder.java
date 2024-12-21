@@ -14,7 +14,7 @@ public class SerializeDeserializePreOrder {
 
         var nodeList = serialize(root);
         System.out.println(nodeList);
-        Utilities.printInOrder(deserialize(nodeList)); 
+        Utilities.printPreOrder(deserialize(nodeList));
     }
 
     private static void _serialize(Node node, List<String> output) {
