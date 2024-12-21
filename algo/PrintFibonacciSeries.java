@@ -4,7 +4,7 @@ public class PrintFibonacciSeries {
 
     private static void printFibonacciSeries(Long n) throws Exception {       
        
-       if (n==0)
+       if (n<0)
         throw new Exception("should be positive"); 
 
         System.out.print(1 + " "); 
