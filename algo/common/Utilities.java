@@ -1,6 +1,7 @@
-package algo;
+package algo.common;
+
 import java.util.Arrays;
- 
+
 
 public class Utilities {
 

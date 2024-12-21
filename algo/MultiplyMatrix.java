@@ -1,5 +1,7 @@
 package algo;
 
+import algo.common.Utilities;
+
 public class MultiplyMatrix {
 
     public static long[][] multiplyMatrix(long[][] m1 , long[][] m2) throws Exception {

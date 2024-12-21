@@ -1,4 +1,6 @@
 package algo;
+import algo.common.Node;
+
 import java.util.ArrayList;
 import java.util.List;
 
