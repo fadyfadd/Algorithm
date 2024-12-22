@@ -65,12 +65,10 @@ public class Dijkstra {
                 distance.put(key, Long.MAX_VALUE);
                 dijkstraQueue.put(new PriorityItem(key, Long.MAX_VALUE));
             }
-
             previous.put(key, null);
         }
 
         while (dijkstraQueue.contains()) {
-
             var currentNode = dijkstraQueue.getPriorityNode();
 
             if (currentNode.item == finish) {
@@ -82,17 +80,17 @@ public class Dijkstra {
             }
 
             if (currentNode.weight != Long.MAX_VALUE) {
-
                 var children = graph.getContent().get(currentNode.item);
                 for (int i = 0; i <= children.size() - 1; i++) {
 
-                    var newWeight = children.get(i).weight + currentNode.weight;
-                    var currentWeight = distance.get(children.get(i));
+                    var childrenNode = children.get(i);
+                    var newWeight = childrenNode.weight + currentNode.weight;
+                    var currentWeight = distance.get(childrenNode.data);
 
                     if (newWeight < currentWeight) {
-                        distance.put(children.get(i).data, newWeight);
-                        previous.put(children.get(i).data, currentNode.item);
-                        dijkstraQueue.put(new PriorityItem(children.get(i).data, newWeight));
+                        distance.put(childrenNode.data, newWeight);
+                        previous.put(childrenNode.data, currentNode.item);
+                        dijkstraQueue.put(new PriorityItem(childrenNode.data, newWeight));
                     }
                 }
             }
