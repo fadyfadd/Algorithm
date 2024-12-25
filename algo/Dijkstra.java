@@ -94,7 +94,7 @@ public class Dijkstra {
                 for (int i = 0; i <= children.size() - 1; i++) {
 
                     var childrenNode = children.get(i);
-                    var newWeight = childrenNode.weight + currentNode.weight;
+                    var newWeight = childrenNode.weight + distance.get(currentNode.item);
                     var currentWeight = distance.get(childrenNode.data);
 
                     if (newWeight < currentWeight) {
