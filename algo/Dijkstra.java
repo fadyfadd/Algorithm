@@ -30,14 +30,24 @@ public class Dijkstra {
             nodes.sort(new Comparator<PriorityItem>() {
                 @Override
                 public int compare(PriorityItem o1, PriorityItem o2) {
-                    return (int) (o1.weight - o2.weight);
+
+                    if (o1.weight > o2.weight)
+                        return 1;
+                    else if (o1.weight == o2.weight)
+                        return 0;
+
+                    return -1;
                 }
             });
 
         }
 
         public PriorityItem getPriorityNode() {
-            return nodes.get(0);
+
+            var node =  nodes.get(0);
+            nodes.remove(0);
+            return node;
+
         }
     }
 
@@ -58,7 +68,7 @@ public class Dijkstra {
         while (entrySet.hasNext()) {
             var key = entrySet.next().getKey();
 
-            if (key == start) {
+            if (key.equals(start)) {
                 distance.put(key, 0L);
                 dijkstraQueue.put(new PriorityItem(key, 0L));
             } else {
@@ -71,7 +81,7 @@ public class Dijkstra {
         while (dijkstraQueue.contains()) {
             var currentNode = dijkstraQueue.getPriorityNode();
 
-            if (currentNode.item == finish) {
+            if (currentNode.item.equals(finish)) {
                 while (previous.get(currentNode.item) != null) {
                     path.add(currentNode.item);
                     currentNode.item = previous.get(currentNode.item);
@@ -123,9 +133,10 @@ public class Dijkstra {
 
         var inst = new Dijkstra();
         inst.DijkstraPath("A" , "E" , graph);
+        System.out.print("Shortest Path: ");
         inst.path.stream().forEach((a)->System.out.print(a + " "));
-        System.out.println(inst.shortestDistance);
-
+        System.out.println("");
+        System.out.println("Length: " + inst.shortestDistance);
     }
 
 }
