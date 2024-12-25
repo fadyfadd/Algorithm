@@ -39,12 +39,13 @@ public class FindAllTreePaths {
         root.left.right = new Node("5");
         root.right.left = new Node("2");
 
+        System.out.print("Paths");
         var output = findAllPaths(root);
         
         output.stream().forEach((l) -> {
-            System.out.println("Path");
+          System.out.println("");
             l.stream().forEach((n) -> {
-                System.out.println(n.data);
+                System.out.print(n.data + " ");
             });
         });     
 

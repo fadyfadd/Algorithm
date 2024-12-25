@@ -133,10 +133,8 @@ public class Dijkstra {
 
         var inst = new Dijkstra();
         inst.DijkstraPath("A" , "E" , graph);
-        System.out.print("Shortest Path: ");
-        inst.path.stream().forEach((a)->System.out.print(a + " "));
-        System.out.println("");
-        System.out.println("Length: " + inst.shortestDistance);
+        System.out.println(inst.path);
+        System.out.println(inst.shortestDistance);
     }
 
 }
